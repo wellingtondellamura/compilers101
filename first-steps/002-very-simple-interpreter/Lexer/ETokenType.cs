@@ -1,4 +1,4 @@
-namespace very_simple_interpreter.Lexer
+namespace VerySimpleInterpreter.Lexer
 {
     public enum ETokenType
     {
