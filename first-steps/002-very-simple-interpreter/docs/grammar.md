@@ -1,11 +1,14 @@
-prog   : line | line prog
+prog   : lineX
+X      : EOF | prog
 line   : stmt EOL
 stmt   : in | out | atrib
 in     : INPUT VAR
 out    : OUTPUT VAR
 atrib  : VAR AT expr
-expr   : term | term + expr | term - expr
-term   : fact | fact * term | fact / term
+expr   : termY
+Y      : vazio | + expr | - expr
+term   : factZ
+Z      : vazio | * term | / term
 fact   : NUM | VAR | OE expr CE
 
 EOL    : [\n\r]+
