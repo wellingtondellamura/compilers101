@@ -1,0 +1,15 @@
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\bin\Debug\net6.0\vst.exe
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\bin\Debug\net6.0\vst.deps.json
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\bin\Debug\net6.0\vst.runtimeconfig.json
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\bin\Debug\net6.0\vst.dll
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\bin\Debug\net6.0\vst.pdb
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\obj\Debug\net6.0\vst.csproj.AssemblyReference.cache
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\obj\Debug\net6.0\vst.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\obj\Debug\net6.0\vst.AssemblyInfoInputs.cache
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\obj\Debug\net6.0\vst.AssemblyInfo.cs
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\obj\Debug\net6.0\vst.csproj.CoreCompileInputs.cache
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\obj\Debug\net6.0\vst.dll
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\obj\Debug\net6.0\refint\vst.dll
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\obj\Debug\net6.0\vst.pdb
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\obj\Debug\net6.0\vst.genruntimeconfig.cache
+C:\Users\wellington\projects\lectures\compilers101\first-steps\001-very-simple-translator\csharp\vst\obj\Debug\net6.0\ref\vst.dll
