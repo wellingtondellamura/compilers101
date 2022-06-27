@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/wellington/projects/compilers101/first-steps/001-very-simple-translator/csharp/vst/vst.csproj",
-      "projectName": "vst",
-      "projectPath": "/home/wellington/projects/compilers101/first-steps/001-very-simple-translator/csharp/vst/vst.csproj",
+      "projectUniqueName": "/home/wellington/projects/compilers101/first-steps/very-simple-interpreter/very-simple-interpreter.csproj",
+      "projectName": "very-simple-interpreter",
+      "projectPath": "/home/wellington/projects/compilers101/first-steps/very-simple-interpreter/very-simple-interpreter.csproj",
       "packagesPath": "/home/wellington/.nuget/packages/",
-      "outputPath": "/home/wellington/projects/compilers101/first-steps/001-very-simple-translator/csharp/vst/obj/",
+      "outputPath": "/home/wellington/projects/compilers101/first-steps/very-simple-interpreter/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/wellington/.nuget/NuGet/NuGet.Config"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.301/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
       }
     }
   }

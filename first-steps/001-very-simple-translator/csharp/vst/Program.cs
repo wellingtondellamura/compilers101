@@ -28,7 +28,7 @@ namespace vst
         {
             char peek;
             _position++;
-            if (_position < _input.Length-1)
+            if (_position < _input.Length)
                 peek = _input[_position];
             else
                 return new Token(ETokenType.EOF);
@@ -43,34 +43,43 @@ namespace vst
             if (Char.IsLetter(peek))
                 return new Token(ETokenType.VAR);
             
-            //erro léxico
+            Error("Erro Léxico");
             return new Token(ETokenType.EOF);
         }
 
-        static void error(string message)
-        {
+        static void Error(string message)
+        {           
+            Console.WriteLine("********************************");
             Console.WriteLine("Erro! "+ message);
+            Console.WriteLine(_input);
+            Console.WriteLine("^".PadLeft(_position+1, ' '));
+            Console.WriteLine("********************************");
             Environment.Exit(0);
+        }
+
+        static void Log(string message)
+        {           
+            Console.WriteLine(">>>>"+ message);
         }
 
         static void match(ETokenType type)
         {
-            Console.WriteLine("match " + _lookahead.Type);
+            Log("match " + _lookahead.Type);
             if (_lookahead.Type == type)
                 _lookahead = nextToken();
             else
-                error("Token inválido");
+                Error("Token inválido");
         }
 
         static void E() //E  ::= TR
         {
-            Console.WriteLine("E " + _lookahead.Type);
+            Log("E " + _lookahead.Type);
             T();
             R();
         }
         static void R() //R  ::= + E | - E | ε
         {
-            Console.WriteLine("R " + _lookahead.Type);
+            Log("R " + _lookahead.Type);
             if (_lookahead.Type == ETokenType.SUM)
             {
                 match(ETokenType.SUM);
@@ -80,14 +89,15 @@ namespace vst
             {
                 match(ETokenType.SUB);
                 E();
-            } else if (_lookahead.Type != ETokenType.EOF)
+            } 
+            else if (_lookahead.Type != ETokenType.EOF)
             {
-               error("Símbolo inesperado em R");
+               Error("Símbolo inesperado em R");
             }
         }        
         static void T() //T  ::= ( E ) | NUM | VAR
         {
-            Console.WriteLine("T " + _lookahead.Type);
+            Log("T " + _lookahead.Type);
             if (_lookahead.Type == ETokenType.OPEN)
             {       
                 match(ETokenType.OPEN);         
@@ -102,6 +112,9 @@ namespace vst
             else if (_lookahead.Type == ETokenType.VAR)
             {
                 match(ETokenType.VAR);
+            } else 
+            {
+                Error("Símbolo inesperado em T");
             }
         }
 
@@ -112,7 +125,7 @@ namespace vst
             _input = Console.ReadLine();
             _lookahead = nextToken();
             E();
-            Console.WriteLine("Sucesso");
+            Log("Sucesso");
         }
     }
 }
