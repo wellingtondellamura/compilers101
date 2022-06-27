@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/wellington/projects/compilers101/first-steps/very-simple-interpreter/very-simple-interpreter.csproj": {}
+    "/home/wellington/projects/compilers101/first-steps/001-very-simple-translator/csharp/vst/vst.csproj": {}
   },
   "projects": {
-    "/home/wellington/projects/compilers101/first-steps/very-simple-interpreter/very-simple-interpreter.csproj": {
+    "/home/wellington/projects/compilers101/first-steps/001-very-simple-translator/csharp/vst/vst.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/wellington/projects/compilers101/first-steps/very-simple-interpreter/very-simple-interpreter.csproj",
-        "projectName": "very-simple-interpreter",
-        "projectPath": "/home/wellington/projects/compilers101/first-steps/very-simple-interpreter/very-simple-interpreter.csproj",
+        "projectUniqueName": "/home/wellington/projects/compilers101/first-steps/001-very-simple-translator/csharp/vst/vst.csproj",
+        "projectName": "vst",
+        "projectPath": "/home/wellington/projects/compilers101/first-steps/001-very-simple-translator/csharp/vst/vst.csproj",
         "packagesPath": "/home/wellington/.nuget/packages/",
-        "outputPath": "/home/wellington/projects/compilers101/first-steps/very-simple-interpreter/obj/",
+        "outputPath": "/home/wellington/projects/compilers101/first-steps/001-very-simple-translator/csharp/vst/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/wellington/.nuget/NuGet/NuGet.Config"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.301/RuntimeIdentifierGraph.json"
         }
       }
     }

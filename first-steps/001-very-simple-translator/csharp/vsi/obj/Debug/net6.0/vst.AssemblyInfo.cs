@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("very-simple-interpreter")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("vst")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("very-simple-interpreter")]
-[assembly: System.Reflection.AssemblyTitleAttribute("very-simple-interpreter")]
+[assembly: System.Reflection.AssemblyProductAttribute("vst")]
+[assembly: System.Reflection.AssemblyTitleAttribute("vst")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
