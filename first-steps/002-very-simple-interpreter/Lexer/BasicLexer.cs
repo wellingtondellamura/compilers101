@@ -2,7 +2,6 @@ namespace VerySimpleInterpreter.Lexer
 {
     public class BasicLexer
     {
-        public static Token EOF = new Token(ETokenType.EOF);
 
         public string Filename {get; protected set;}
         public SymbolTable SymbolTable {get; protected set;}
@@ -21,11 +20,14 @@ namespace VerySimpleInterpreter.Lexer
 
         public Token GetNextToken()
         {
-            if (_peek == null)
-                _peek = NextChar();
+            if (_reader.EndOfStream)
+                return new Token(ETokenType.EOF);
 
-            // if (_peek == null)
-            //     return EOF;
+            while (_peek == null || _peek== ' ' ||  _peek== '\t' || _peek== '\r')
+            {
+                _peek = NextChar();
+            }
+            
             
             switch (_peek) 
             {
@@ -36,8 +38,7 @@ namespace VerySimpleInterpreter.Lexer
                 case '(': _peek = null; return new Token(ETokenType.OE);
                 case ')': _peek = null; return new Token(ETokenType.CE);
                 case '=': _peek = null; return new Token(ETokenType.AT);
-                case '\n':
-                case '\r':  _peek = null; return new Token(ETokenType.EOL);                
+                case '\n':_peek = null; return new Token(ETokenType.EOL);                
             }
 
             if (_peek == '$')  //$[a-z]+
@@ -46,7 +47,8 @@ namespace VerySimpleInterpreter.Lexer
                 do {
                     _peek = NextChar();
                     varName += _peek;
-                } while (Char.IsLetter(_peek.Value));
+                    //Console.WriteLine(_peek);
+                } while (_peek.HasValue && Char.IsLetter(_peek.Value));
                 SymbolTable.Put(varName);
                 return new Token(ETokenType.VAR);//retornar o indice
             }
@@ -70,19 +72,19 @@ namespace VerySimpleInterpreter.Lexer
                 do {
                     _peek = NextChar();
                     value = value * 10 + GetValue(_peek.Value);
-                } while (Char.IsDigit(_peek.Value));
+                } while (_peek.HasValue && Char.IsDigit(_peek.Value));
                 return new Token(ETokenType.NUM, value);
             }        
             
             return new Token(ETokenType.EOF);
         }
 
-        private char? NextChar()
+        public char? NextChar()
         {
             char? c = null;
             if (!_reader.EndOfStream)
                 c =  (char?) _reader.Read();
-            Console.WriteLine(c);
+            //Console.WriteLine(c);
             return c;
         }
 

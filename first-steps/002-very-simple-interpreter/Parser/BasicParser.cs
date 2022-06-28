@@ -57,13 +57,13 @@ fact   : NUM | VAR | OE expr CE
     
         public void Stmt() //stmt   : in | out | atrib  
         {
-            if (_lookAhead.Type == ETokenType.INPUT)
-                Input();
-            else if (_lookAhead.Type == ETokenType.OUTPUT)
-                Output();
-            else if (_lookAhead.Type == ETokenType.VAR)
-                Atrib();
-            else
+            // if (_lookAhead.Type == ETokenType.INPUT)
+            //     Input();
+            // else if (_lookAhead.Type == ETokenType.OUTPUT)
+            //     Output();
+            // else if (_lookAhead.Type == ETokenType.VAR)
+            //     Atrib();
+            // else
                 Error();
         }
 

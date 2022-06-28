@@ -4,7 +4,7 @@ namespace vsi
 {
     public enum ETokenType 
     {
-        SUM, SUB, OPEN, CLOSE, NUM, VAR, EOF
+        SUM, SUB, OPEN, CLOSE, NUM, EOF
     }
 
     public class Token
@@ -40,9 +40,7 @@ namespace vsi
             }
             if (Char.IsDigit(peek))
                 return new Token(ETokenType.NUM, Int32.Parse(peek.ToString()));
-            if (Char.IsLetter(peek))
-                return new Token(ETokenType.VAR);
-            
+           
             Error("Erro Léxico");
             return new Token(ETokenType.EOF);
         }
@@ -115,10 +113,7 @@ namespace vsi
                 Match(ETokenType.NUM);
                 return res;
             } 
-            else if (_lookahead.Type == ETokenType.VAR)
-            {
-                Match(ETokenType.VAR);
-            } else 
+            else  
             {
                 Error("Símbolo inesperado em T");
                 
