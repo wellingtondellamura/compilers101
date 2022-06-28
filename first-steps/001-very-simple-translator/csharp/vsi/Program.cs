@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace vst
+namespace vsi
 {
     public enum ETokenType 
     {
@@ -39,7 +39,7 @@ namespace vst
                 case ')': return new Token(ETokenType.CLOSE);
             }
             if (Char.IsDigit(peek))
-                return new Token(ETokenType.NUM);
+                return new Token(ETokenType.NUM, Int32.Parse(peek.ToString()));
             if (Char.IsLetter(peek))
                 return new Token(ETokenType.VAR);
             
@@ -71,43 +71,49 @@ namespace vst
                 Error("Token inválido");
         }
 
-        static void E() //E  ::= TR
+        static int E() //E  ::= TR
         {
             Log("E " + _lookahead.Type);
-            T();
-            R();
+            var res1 = T();
+            var res2 = R(res1);
+            return res2;
         }
-        static void R() //R  ::= + E | - E | ε
+        static int R(int t) //R  ::= + E | - E | ε
         {
             Log("R " + _lookahead.Type);
-            if (_lookahead.Type == ETokenType.SUM)
+            if (_lookahead.Type == ETokenType.SUM)  //FIRST
             {
                 Match(ETokenType.SUM);
-                E();
+                var res = E();
+                return t + res;
             } 
-            else if (_lookahead.Type == ETokenType.SUB)
+            else if (_lookahead.Type == ETokenType.SUB) //FIRST
             {
                 Match(ETokenType.SUB);
-                E();
+                var res = E();
+                return t - res;
             } 
-            else if (_lookahead.Type != ETokenType.EOF)
+            else if ((_lookahead.Type != ETokenType.EOF) && (_lookahead.Type != ETokenType.CLOSE))//FOLLOW
             {
                Error("Símbolo inesperado em R");
             }
+            return t;
         }        
-        static void T() //T  ::= ( E ) | NUM | VAR
+        static int T() //T  ::= ( E ) | NUM | VAR
         {
             Log("T " + _lookahead.Type);
             if (_lookahead.Type == ETokenType.OPEN)
             {       
                 Match(ETokenType.OPEN);         
-                E();
+                var res = E();
                 Match(ETokenType.CLOSE);
+                return res;
             } 
             else if (_lookahead.Type == ETokenType.NUM)
             {
+                var res = _lookahead.Value;
                 Match(ETokenType.NUM);
-                
+                return res;
             } 
             else if (_lookahead.Type == ETokenType.VAR)
             {
@@ -115,7 +121,9 @@ namespace vst
             } else 
             {
                 Error("Símbolo inesperado em T");
+                
             }
+            return 0;
         }
 
 
@@ -123,10 +131,10 @@ namespace vst
         {
             Console.WriteLine("Insira a expressão");
             _input = Console.ReadLine();
-            
             _lookahead = NextToken();
-            E();
+            var res = E();
             Log("Sucesso");
+            Log("O resultado é: "+ res);
         }
     }
 }

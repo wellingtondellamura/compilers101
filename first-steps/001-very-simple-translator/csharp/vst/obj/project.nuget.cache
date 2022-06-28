@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2eNDT0dYvWOq+hd0Pmgl9gGKFrYQIgtgZRJ0Rbcear9fZ6KQSU3zzSnHFXz6o8+OIN7IV5hJT0/JR7J5tGs/fQ==",
+  "dgSpecHash": "f50+2ZUlK+yd/StlLqqBgcn7oTxvuSKytfz15DPYxrZOFKs6klTro0oSXNDHef9ads9vCq9hXh46z9ARp5NdxQ==",
   "success": true,
-  "projectFilePath": "/home/wellington/projects/compilers101/first-steps/001-very-simple-translator/csharp/vst/vst.csproj",
+  "projectFilePath": "C:\\Users\\wellington\\projects\\lectures\\compilers101\\first-steps\\001-very-simple-translator\\csharp\\vst\\vst.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
