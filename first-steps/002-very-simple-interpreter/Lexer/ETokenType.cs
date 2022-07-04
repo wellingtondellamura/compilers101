@@ -14,6 +14,8 @@ namespace VerySimpleInterpreter.Lexer
         SUM,        // SUM    : '+'
         SUB,        // SUB    : '-'
         DIV,        // DIV    : '/'
-        MULT        // MULT   : '*'
+        MULT,        // MULT   : '*'
+
+        ERR         // Lexer Error
     }
 }

@@ -46,19 +46,17 @@ namespace VerySimpleInterpreter.Lexer
                 var varName = "";                
                 do {
                     _peek = NextChar();
-                    varName += _peek;
-                    //Console.WriteLine(_peek);
-                } while (_peek.HasValue && Char.IsLetter(_peek.Value));
-                SymbolTable.Put(varName);
-                return new Token(ETokenType.VAR);//retornar o indice
+                    if (Char.IsLetter(_peek.Value))
+                        varName += _peek;      
+                } while (Char.IsLetter(_peek.Value));
+                var key = SymbolTable.Put(varName);
+                return new Token(ETokenType.VAR, key);
             }
 
             if (_peek == 'r')  //'read'
             {
                 if (testSufix("ead"))
                     return new Token(ETokenType.INPUT);
-                //else
-                    //error
             }
 
             if (_peek == 'w')  //'write'
@@ -71,20 +69,19 @@ namespace VerySimpleInterpreter.Lexer
                 var value = 0;                
                 do {
                     _peek = NextChar();
-                    value = value * 10 + GetValue(_peek.Value);
-                } while (_peek.HasValue && Char.IsDigit(_peek.Value));
+                    value = value * 10 + GetValue(_peek);
+                } while (Char.IsDigit(_peek.Value));
                 return new Token(ETokenType.NUM, value);
             }        
             
-            return new Token(ETokenType.EOF);
+            return new Token(ETokenType.ERR);
         }
 
-        public char? NextChar()
+        public char NextChar()
         {
-            char? c = null;
+            Char c = '\0';
             if (!_reader.EndOfStream)
-                c =  (char?) _reader.Read();
-            //Console.WriteLine(c);
+                c = (Char) _reader.Read();
             return c;
         }
 
@@ -101,7 +98,7 @@ namespace VerySimpleInterpreter.Lexer
             return res;
         }
 
-        private int GetValue(char c){
+        private int GetValue(Char? c){
             if (c == '0') return 0;
             if (c == '1') return 1;
             if (c == '2') return 2;
