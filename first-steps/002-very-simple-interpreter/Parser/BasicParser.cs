@@ -16,17 +16,22 @@ namespace VerySimpleInterpreter.Parser
             if (_lookAhead.Type == type)
                 _lookAhead = _lexer.GetNextToken();
             else
-                Error();
+                Error("Expected "+type+" - Found "+_lookAhead.Type);
         }
 
-        public void Error()
+        public void Error(String msg)
         {
-            Console.WriteLine("Lascou...");
+            Console.WriteLine("#Error on _____");
+            Console.WriteLine("Line "+_lexer.Line);
+            Console.WriteLine("Column "+_lexer.Column);
+            Console.WriteLine("________________");
+            Console.WriteLine(msg);
+            Console.WriteLine("________________");
         }
 
         /*
-in     : INPUT VAR
-out    : OUTPUT VAR
+
+
 atrib  : VAR AT expr
 expr   : termY
 Y      : vazio | + expr | - expr
@@ -57,16 +62,27 @@ fact   : NUM | VAR | OE expr CE
     
         public void Stmt() //stmt   : in | out | atrib  
         {
-            // if (_lookAhead.Type == ETokenType.INPUT)
-            //     Input();
-            // else if (_lookAhead.Type == ETokenType.OUTPUT)
-            //     Output();
-            // else if (_lookAhead.Type == ETokenType.VAR)
-            //     Atrib();
-            // else
-                Error();
+             if (_lookAhead.Type == ETokenType.INPUT)
+                 Input();
+             else if (_lookAhead.Type == ETokenType.OUTPUT)
+                 Output();
+             else if (_lookAhead.Type == ETokenType.VAR)
+                 Atrib();
+             else
+                Error("");
         }
 
+        public void Input() // in     : INPUT VAR
+        {
+            Match(ETokenType.INPUT);
+            Match(ETokenType.VAR);
+        }
+
+        public void Output() // out    : OUTPUT VAR
+        {
+            Match(ETokenType.OUTPUT);
+            Match(ETokenType.VAR);
+        }
 
     }
 }
