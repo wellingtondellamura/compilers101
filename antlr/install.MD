@@ -34,6 +34,18 @@ https://marketplace.visualstudio.com/items?itemName=mike-lischke.vscode-antlr4
 
 
 
+## Configuração do Plugin
+
+"antlr4.generation": {
+        "mode": "external",
+        "language": "CSharp",
+        "listeners": true,
+        "visitors": true, 
+        "outputDir": "output",
+        "package": "Grammar"
+    },
+
+
 ## Configuração
 
 {
