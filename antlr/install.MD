@@ -35,7 +35,7 @@ https://marketplace.visualstudio.com/items?itemName=mike-lischke.vscode-antlr4
 
 
 ## Configuração do Plugin
-
+``
 "antlr4.generation": {
         "mode": "external",
         "language": "CSharp",
@@ -44,10 +44,21 @@ https://marketplace.visualstudio.com/items?itemName=mike-lischke.vscode-antlr4
         "outputDir": "output",
         "package": "Grammar"
     },
+``
 
+## Configuração do Debug
 
-## Configuração
+É possível utilizar a função **"Run and Debug"** disponível no Visual Studio Code para testar sua gramática com **ANTLR**.
 
+Para que isso seja possível, além de instalar a extensão do ANTLR, também é preciso criar uma rotina de execução e um arquivo de entrada. 
+
+Os passos a seguir podem lhe ajudar com esta tarefa:
+0. Criar um arquivo de execução chamado `launch.json` na raíz do seu projeto dentro da pasta `.vscode`. Observe o conteúdo a seguir de exemplo e ajuste para as suas necessidades.
+0. Criar um arquivo de entrada na raíz do seu projeto. Sugiro utilizar o nome `input.txt`. Mas se preferir pode ser outro nome desde que você atualize essa informação no item `input` dentro do arquivo `launch.json`.
+0. Para executar sua gramática, basta preencher o arquivo de entrada com o programa e ativar o debug do Visual Studio Code. Nesta função será possível visualizar a árvore de derivação e também os tokens encontrados. 
+
+### Exemplo de código para `launch.json`
+``
 {
     "version": "2.0.0",
     "configurations": [
@@ -62,3 +73,4 @@ https://marketplace.visualstudio.com/items?itemName=mike-lischke.vscode-antlr4
         "visualParseTree": true
     }]
 }
+``
