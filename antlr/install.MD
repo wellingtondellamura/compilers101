@@ -73,9 +73,7 @@ https://marketplace.visualstudio.com/items?itemName=mike-lischke.vscode-antlr4
 ## Configuração do Debug
 
 É possível utilizar a função **"Run and Debug"** disponível no Visual Studio Code para testar sua gramática com **ANTLR**.
-
 Para que isso seja possível, além de instalar a extensão do ANTLR, também é preciso criar uma rotina de execução e um arquivo de entrada. 
-
 Os passos a seguir podem lhe ajudar com esta tarefa:
 
 1. Criar um arquivo de execução chamado `launch.json` na raíz do seu projeto dentro da pasta `.vscode`. Observe o conteúdo a seguir de exemplo e ajuste para as suas necessidades.
