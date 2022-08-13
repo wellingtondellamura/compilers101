@@ -1,0 +1,17 @@
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\obj\Debug\net6.0\first-project.csproj.AssemblyReference.cache
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\obj\Debug\net6.0\first-project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\obj\Debug\net6.0\first-project.AssemblyInfoInputs.cache
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\obj\Debug\net6.0\first-project.AssemblyInfo.cs
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\obj\Debug\net6.0\first-project.csproj.CoreCompileInputs.cache
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\bin\Debug\net6.0\first-project.exe
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\bin\Debug\net6.0\first-project.deps.json
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\bin\Debug\net6.0\first-project.runtimeconfig.json
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\bin\Debug\net6.0\first-project.dll
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\bin\Debug\net6.0\first-project.pdb
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\bin\Debug\net6.0\Antlr4.Runtime.Standard.dll
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\obj\Debug\net6.0\first-project.csproj.CopyComplete
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\obj\Debug\net6.0\first-project.dll
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\obj\Debug\net6.0\refint\first-project.dll
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\obj\Debug\net6.0\first-project.pdb
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\obj\Debug\net6.0\first-project.genruntimeconfig.cache
+C:\Users\wellington\projects\lectures\compilers101\antlr\first-project\obj\Debug\net6.0\ref\first-project.dll
