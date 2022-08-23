@@ -19,7 +19,7 @@ namespace VerySimpleInterpreter.Lexer
                 st = new SymbolTable();
             SymbolTable = st;
             _reader = new StreamReader(Filename);
-            Column = Line = 0;
+            Column = Line = 1;
         }
 
         public Token GetNextToken()
@@ -44,7 +44,7 @@ namespace VerySimpleInterpreter.Lexer
                 case '=': _peek = null; return new Token(ETokenType.AT);
                 case '\n':
                     _peek = null; 
-                    Column = 0;
+                    Column = 1;
                     Line++;
                     return new Token(ETokenType.EOL);                
 
@@ -80,6 +80,7 @@ namespace VerySimpleInterpreter.Lexer
                     _peek = NextChar();
                     value = value * 10 + GetValue(_peek);
                 } while (Char.IsDigit(_peek.Value));
+
                 return new Token(ETokenType.NUM, value);
             }        
             
