@@ -1,3 +1,6 @@
+# Gramática da linguagem de exemplo
+
+```
 prog   : line X
 X      : EOF | prog
 line   : stmt EOL
@@ -22,3 +25,4 @@ SUM    : '+'
 SUB    : '-'
 DIV    : '/'
 MULT   : '*'
+```
